@@ -1,4 +1,4 @@
-package com.chessman.fivechessmangame;
+package com.chessman.fivechessmangame.checker_board;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
 
 import androidx.annotation.Nullable;
 
@@ -112,6 +113,9 @@ public class Checkerboard extends View {
         paint.setColor(Color.BLACK);
         float topY = (Tool.getScreenHeight() - Tool.getScreenWidth()) / 2f;
         float stopY = topY + (Tool.getScreenWidth() - 30f - 30f);
+
+        onCheckerboardListener.onCatchTopYAndBottomY(topY,stopY);
+
         //繪製背景
         Paint bgPaint = new Paint();
         bgPaint.setColor(Color.parseColor("#C1A171"));
@@ -294,7 +298,7 @@ public class Checkerboard extends View {
             userInputDataList.clear();
             invalidate();
             Log.i("Michael", "白子勝利");
-            onCheckerboardListener.onWinListener(WHITE_SIDE);
+            onCheckerboardListener.onWinOrLose(WHITE_SIDE);
             return;
         }
 
@@ -303,7 +307,7 @@ public class Checkerboard extends View {
             allCheckerboardList.clear();
             userInputDataList.clear();
             invalidate();
-            onCheckerboardListener.onWinListener(BLACK_SIDE);
+            onCheckerboardListener.onWinOrLose(BLACK_SIDE);
             Log.i("Michael", "黑子獲勝");
         }
     }
@@ -355,7 +359,8 @@ public class Checkerboard extends View {
 
 
     public interface OnCheckerboardListener{
-        void onWinListener(int type);
+        void onWinOrLose(int type);
+        void onCatchTopYAndBottomY(float topY,float bottomY);
     }
 
 }
