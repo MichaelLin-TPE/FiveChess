@@ -1,4 +1,4 @@
-package com.chessman.fivechessmangame.checker_board;
+package com.chessman.fivechessmangame.ui.checker_board;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

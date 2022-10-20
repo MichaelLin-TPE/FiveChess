@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.chessman.fivechessmangame.R;
+import com.chessman.fivechessmangame.ui.checker_board.CheckerboardActivity;
 
 public class LaunchActivity extends AppCompatActivity {
 
