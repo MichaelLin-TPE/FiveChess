@@ -15,4 +15,8 @@ public interface CheckerboardPresenter {
     void onCatchTopY(float topY);
 
     void startToCountDownLocaleUser();
+
+    void onGameOverCancel();
+
+    void onGameOverPlayAgain();
 }

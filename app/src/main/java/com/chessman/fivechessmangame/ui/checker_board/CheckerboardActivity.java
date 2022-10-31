@@ -85,8 +85,7 @@ public class CheckerboardActivity extends AppCompatActivity implements Checkerbo
         tvLocaleUserCountDown = view.findViewById(R.id.count_down);
         localeUserProgressBar = view.findViewById(R.id.count_down_progress);
         Log.i("Michael","showLocaleUser");
-//        presenter.startToCountDownLocaleUser();
-
+        presenter.startToCountDownLocaleUser();
     }
 
     //顯示對手
@@ -117,6 +116,33 @@ public class CheckerboardActivity extends AppCompatActivity implements Checkerbo
 
     @Override
     public void showGameOverDialog() {
+        GameOverDialog dialog = GameOverDialog.newInstance();
+        dialog.show(getSupportFragmentManager(),"dialog");
+        dialog.setOnGameOverDialogClickListener(new GameOverDialog.OnGameOverDialogClickListener() {
+            @Override
+            public void onCancel() {
+                presenter.onGameOverCancel();
+            }
+
+            @Override
+            public void onPlayAgain() {
+                presenter.onGameOverPlayAgain();
+            }
+        });
+    }
+
+    @Override
+    public void onPageFinish() {
+        finish();
+    }
+
+    @Override
+    public void onPlayAgain() {
+
+    }
+
+    @Override
+    public void showErrorDialog(String error) {
 
     }
 }

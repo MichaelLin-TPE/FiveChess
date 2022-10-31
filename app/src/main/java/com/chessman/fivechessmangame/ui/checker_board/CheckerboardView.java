@@ -12,4 +12,10 @@ public interface CheckerboardView {
     void setLocaleCountDownValue(String time);
 
     void showGameOverDialog();
+
+    void onPageFinish();
+
+    void onPlayAgain();
+
+    void showErrorDialog(String error);
 }

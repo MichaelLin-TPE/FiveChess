@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/dialog_bg"
+        app:layout_constraintTop_toTopOf="@id/logo">
+
+
+        <ImageView
+            android:id="@+id/user1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/user"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/result"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="黑子\n獲勝"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/user1_score"
+            app:layout_constraintLeft_toRightOf="@id/user1"
+            app:layout_constraintRight_toLeftOf="@id/user2"
+            app:layout_constraintTop_toTopOf="@id/user1" />
+
+
+        <ImageView
+            android:id="@+id/user2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/user"
+            app:layout_constraintLeft_toRightOf="@id/result"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/user1_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Michael"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user1"
+            app:layout_constraintRight_toRightOf="@id/user1"
+            app:layout_constraintTop_toBottomOf="@id/user1" />
+
+
+        <TextView
+            android:id="@+id/user1_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="見習棋士"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user1"
+            app:layout_constraintRight_toRightOf="@id/user1"
+            app:layout_constraintTop_toBottomOf="@id/user1_name" />
+
+        <TextView
+            android:id="@+id/user2_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Michael"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user2"
+            app:layout_constraintRight_toRightOf="@id/user2"
+            app:layout_constraintTop_toBottomOf="@id/user1" />
+
+        <TextView
+            android:id="@+id/user2_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="見習棋士"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user2"
+            app:layout_constraintRight_toRightOf="@id/user2"
+            app:layout_constraintTop_toBottomOf="@id/user2_name" />
+
+        <TextView
+            android:id="@+id/user1_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="積分 -10"
+            android:textColor="@color/red"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user1"
+            app:layout_constraintRight_toRightOf="@id/user1"
+            app:layout_constraintTop_toBottomOf="@id/user1_level" />
+
+        <TextView
+            android:id="@+id/user2_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="積分 +10"
+            android:textColor="@color/blue"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/user2"
+            app:layout_constraintRight_toRightOf="@id/user2"
+            app:layout_constraintTop_toBottomOf="@id/user2_level" />
+
+
+        <TextView
+            android:id="@+id/back_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/dialog_btn_selector"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/play_again_button"
+            app:layout_constraintTop_toBottomOf="@id/user1_score" />
+
+        <TextView
+            android:id="@+id/play_again_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/dialog_btn_selector"
+            android:gravity="center"
+            android:text="重新配對"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/back_button"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user1_score" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
